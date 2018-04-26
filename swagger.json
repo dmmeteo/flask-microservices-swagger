@@ -9,6 +9,13 @@
     "schemes": [
         "http"
     ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
     "paths": {
         "/ping": {
             "get": {
@@ -103,6 +110,42 @@
                 "responses": {
                     "200": {
                         "description": "Successfully logged in"
+                    }
+                }
+            }
+        },
+        "/auth/status": {
+            "get": {
+                "description": "Returns the logged in user's status",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "user object"
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "get": {
+                "description": "Logs a user out",
+                "produces": [
+                    "application/json"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully logged out"
                     }
                 }
             }
