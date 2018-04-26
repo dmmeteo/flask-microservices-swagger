@@ -72,23 +72,7 @@
                         "description": "User to add",
                         "required": true,
                         "schema": {
-                            "type": "object",
-                            "required": [
-                                "username",
-                                "email",
-                                "password"
-                            ],
-                            "properties": {
-                                "username": {
-                                    "type": "string"
-                                },
-                                "email": {
-                                    "type": "string"
-                                },
-                                "password": {
-                                    "type": "string"
-                                }
-                            }
+                            "$ref": "#/definitions/User"
                         }
                     }
                 ],
@@ -112,23 +96,7 @@
                         "description": "User to log in",
                         "required": true,
                         "schema": {
-                            "type": "object",
-                            "required": [
-                                "username",
-                                "email",
-                                "password"
-                            ],
-                            "properties": {
-                                "username": {
-                                    "type": "string"
-                                },
-                                "email": {
-                                    "type": "string"
-                                },
-                                "password": {
-                                    "type": "string"
-                                }
-                            }
+                            "$ref": "#/definitions/User"
                         }
                     }
                 ],
@@ -140,5 +108,25 @@
             }
         }
     },
-    "definitions": {}
+    "definitions": {
+        "User": {
+            "type": "object",
+            "required": [
+                "username",
+                "email",
+                "password"
+            ],
+            "properties": {
+                "username": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
